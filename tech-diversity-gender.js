@@ -38,7 +38,7 @@ function TechDiversityGender() {
   };
 
   this.setup = function() {
-    textSize(16);
+    textSize(10);
   };
 
   this.destroy = function() {

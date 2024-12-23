@@ -6,7 +6,6 @@ function Gallery() {
   var self = this;
   this.visuals = [];
 
-
   // Add a new visualisation to the navigation bar.
   this.addVisual = function(vis) {
       // Check that the vis object has an id and name.

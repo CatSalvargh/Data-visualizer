@@ -6,26 +6,29 @@ var gallery;
 function setup() {
   // Create a canvas to fill the content div from index.html.
   canvasContainner = select('#app');
-  var c = createCanvas(820, 450);
-  c.parent('app');
-  // var x = (windowWidth - 1000) / 2;
-  // var y = (windowHeight - height) / 2;
-  // c.position(x, y);
+  var canvas = createCanvas(500, 300);
+  // var x = windowWidth/4;
+  // var y = windowHeight/4;
+  // canvas.position(x, y);
+  canvas.parent('app');
+
+  canvas.style("border", "2px solid red");
 
   // Create a new gallery object.
   gallery = new Gallery();
 
-  // Add the visualisation objects here.
+  // Visualisation objects here.
+  gallery.addVisual(new WorldPopHistoric());
   gallery.addVisual(new TechDiversityRace());
   gallery.addVisual(new TechDiversityGender());
   gallery.addVisual(new PayGapByJob2017());
   gallery.addVisual(new PayGapTimeSeries());
   gallery.addVisual(new ClimateChange());
-  gallery.addVisual(new WorldPopHistoric());
 }
 
 function draw() {
   background(240);
+  
   if (gallery.selectedVisual != null) {
     gallery.selectedVisual.draw();
   }
